@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-image: linear-gradient(to right, #AF57E6, #B5FF96); color: white; text-align: center; font-size: 30px; letter-spacing: 30px">
+	<form action="background-random" method="GET">
+		<h1>BACKGROUND</h1>
+		<h1>GENERATOR </h1>
+		<input type="color" id="color1" value="#AF57E6">
+		<input type="color" id="color2" value="#B5FF96">
+		<button onclick="colorrandom()" type="button">Random</button>
+	</form>
+</body>
+</html>
+<script>
+function colorrandom() {
+	var letters = "0123456789ABCDEF";
+	var color1 = "#";
+	var color2 = "#"
+	for (var i = 0; i < 6; i++) {
+		color1 += letters[Math.floor(Math.random() * 16)];
+		color2 += letters[Math.floor(Math.random() * 16)];
+	}
+	document.getElementById("color1").value = color1;
+	document.getElementById("color2").value = color2;
+	var gradient = "linear-gradient(to right,"+color1+","+color2+")";
+    document.body.style.backgroundImage = gradient;
+
+}
+</script>
